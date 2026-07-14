@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Full Stack Job Portal</title>
+    <style>
+    body{
+        font-family:Arial;
+        margin:0;
+        background:#f4f4f4;
+    }
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        background:#007bff;
+        color:white;
+        padding:15px;
+    }
+    .menu a{
+        color:white;
+        margin:10px;
+        text-decoration:none;
+        font-weight:bold;
+
+    }
+    .hero{
+        text-align:center;
+        padding:100px;
+        background:#e9f2ff;
+    }
+    .hero input{
+        padding:10px;
+        width:250px;
+    }
+.hero button{
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+}
+    </style>
+
+</head>
+<body>
+    <div class="navbar">
+
+    <h1 class="logo">TalentBridge 🚀</h1>
+
+    <div class="menu">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="?jobs">Jobs</a>
+    </div>
+</div>
+<div class="hero">
+    <h1>Find your Dream Job</h1>
+    <p> search Jobs from top companies</p>
+    <form action="/jobs" method="GET">
+        <input type="text" name="search" placeholder="search job">
+
+        <button type="submit">Search</button>
+    </form>
+</div>
+</div>
+    
+
+</body>
+</html>

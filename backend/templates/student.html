@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> Student Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='student.css')}}">
+    </head>
+    <body>
+
+        <div class="navbar">
+            <h2>TalentBridge</h2>
+        <div class="menu">
+        <a href="/student">Dashboard</a>
+         <a href="/jobs">Jobs</a>
+         <a href="/my_applications">Applications</a>
+         <a href="/student_profile">Profile</a>
+         <a href="/notifications">🔔</a>
+         <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>welcome student</h2>
+            <div class="cards">
+    <div class="card">
+        <h3>Available Job </h3>
+        <p>View latest jobs openings</h3>
+            <a href="/jobs" class="btn">View Jobs</a>
+        </div>
+
+        <div class="card">
+            <h3>My Applications</h3>
+            <p>Check applied jobs</p>
+            <a href="/my_applications" class="btn">View Applications</a>
+    </div>
+    <div class="card">
+    <h3>Profile</h3>
+    <p>Upadate your Profile</h3>
+        <a href="/student_profile" class="btn">Update Profile</a>
+    </div>
+
+    </div>
+</div>
+
+
+    </body>
+    </html>

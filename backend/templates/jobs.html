@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+    <html>
+        <head>
+            <title>JOBS</title>
+        </head>
+        <body>
+       <h2>Available Jobs</h2>
+
+{% for job in jobs %}
+<div style="border:1px solid black; padding:10px; margin:10px;">
+
+<h3>{{  job[2] }}<h3>
+
+    <p><b>Company:</b> {{ job[1] }}</p>
+
+    <p><b>Salary:</b> {{ job[3] }}</p>
+    <p><b>Location:</b> {{ job[4] }}</p>
+
+    <p><b>Email:</b> {{ job[5] }}</p>
+    <p><b>Phone:</b> {{ job[6] }}</p>
+    
+
+<p>{{ job[7] }}</p>
+{% if role == "student" %}
+
+<form action="/apply_job/{{ job[0] }}" method="POST">   
+    <button type="submit">Apply</button>
+</form>
+
+{% endif %}
+</div>
+
+{% endfor %}
+</body>
+</html>

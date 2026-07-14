@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin.css')}}">
+</head>
+<html>
+    <body>
+<h2>My Applicants</h2>
+{% for job in applications %}
+
+<div style="border:1px solid black; padding:10px; margin:10px;">
+
+<p>{{ job[1] }}-{{ job[2] }}</p>
+<p>Location: {{ job[3] }}</p>
+<p>Email: {{ job[4] }}</p>
+<P>Phone: {{ job[5] }}</p>
+
+<a href="{{ url_for('static', filename='uploads/resumes/' ~  job[6]) }}">Download Resume</a>
+
+<p>Status: {{ job[7] }}</p>
+
+<form action="/update_status/{{ job[0] }}" method="post">
+
+  <button name="status" value="Accepted"></button>
+  
+  <button name="status" value="Rejected"></button>
+
+</form>
+</div>
+
+{% else %}
+
+<p>No applications found</p>
+
+{% endfor %}   
+ 
+    <body>
+        <html>
+            

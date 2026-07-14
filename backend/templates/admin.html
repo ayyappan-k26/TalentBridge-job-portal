@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='admin.css')}}">
+    </head>
+<body>
+    <div class="container">
+
+<h2>Admin Dashboard</h2>
+
+<a href="/logout">Logout</a>
+
+{% for job in applications %}
+
+<div class="box">
+
+    <p><b>Name:</b> {{ job[2] }}</p>
+    <p><b>Resume:</b> {{ job[3] }}</p>
+    <p>Status:{% if job[4] == "Accepted" %}
+
+        <span style="color:green;">Accepted</span>
+        {% elif job[4] == "Rejected" %}
+        <span style="color:red;">Rejected</span>
+        {% else %}
+        <span style="color:orange;">Pending</span>
+        {% endif %}
+    </p>
+
+
+    <form action="/update_status/{{ job[0] }}" method="post">
+        
+        <button name="status" value="Accepted"> Accept</button>
+        <button name="status" value="Rejected">Rejected</button>
+
+    </form>
+    <br>
+
+            <a href="/delete/{{ job[0] }}">Delete</a>
+            
+</div>
+{% endfor %}
+</div>
+
+</body>
+</html>

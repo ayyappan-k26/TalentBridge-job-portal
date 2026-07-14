@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html><head>
+    <title>MY Applied Jobs</title>
+</head>
+    <body>
+      <h2>My Applications</h2>
+      {% if applications|length == 0 %}
+      <p>No applications yet</p>
+      {% endif %}
+
+      {% for job in applications %}
+
+<div style="border:1px solid black; padding:10px; margin:10px;">
+
+<p>{{ job[1] }}</p>
+<p>Location: {{ job[2] }}</p>
+<p>Email: {{ job[3] }}</p>
+<P>Phone: {{ job[4] }}</p>
+
+  {% if job[5] %}
+
+<a href="{{ url_for('static', filename='uploads/resumes/' +  job[5]) }}" taeget="_blank_">View Resume</a>
+{% else %}
+<p>No resume</p>
+{% endif %}
+
+<p> Status:
+  {% if job[6] == "Accepted" %}
+  <span style="color:green;">Accepted</span>
+
+   {% elif job[6] == "Rejected" %}
+  <span style="color:red;">Rejected</span>
+
+     {% else %}
+  <span style="color:orange;">Pending</span>
+  {% endif %}
+</p>
+</div>
+{% endfor %}
+
+  
+    </body>
+    </html>

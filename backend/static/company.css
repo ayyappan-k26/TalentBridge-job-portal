@@ -1,0 +1,40 @@
+body{
+    font-family:Arial;
+    margin:0;
+}
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#007bff;
+    color:white;
+    position:fixed;
+    padding:20px;
+    right:0;
+}
+.sidebar h2{
+    margin-bottom:20px;
+}
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration: none;
+    margin:10px 0;
+    padding:10px;
+    background:rgba(255,255,255,0.2);
+    border-radius:5px;
+}
+.sidebar a:hover{
+    background:white;
+    color: #007bff;
+}
+.main{
+    margin-right:240px;
+    padding:20px;
+}
+.job-card{
+    border:1px solid #ccc;
+    padding:15px;
+    margin:10px 0;
+    border-radius;10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}

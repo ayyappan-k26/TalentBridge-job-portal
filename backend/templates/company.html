@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='admin.css')}}">
+    </head>
+    <body>
+        <div class="sidebar">
+
+<h2>Menu</h2>
+<a href="/post_job">Post New Job</a><br><br>
+<a href="/view_applicants">View Applicants</a><br><br>
+<a href="/logout">Logout</a>
+        </div>
+        <div class="main">
+            <h2>Company Dashboard</h2>
+<h3>Your jobs</h3>
+
+{%for job in jobs %}
+<div class="job-card">
+
+<h3{{ job[2] }}</h3>
+
+<p><b>Company:</b> {{ job[1] }}</p>
+<p><b>Salary:</b> {{ job[3] }}</p>
+<p><b>Location:</b> {{ job[4] }}</p>
+</div>
+{% endfor %}
+</div>
+    </body>
+    </html>

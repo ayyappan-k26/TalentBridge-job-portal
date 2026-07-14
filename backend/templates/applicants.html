@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <h2> Applicants</h2>
+        {% for row in data %}
+        <div style="border:1px solid black;
+        padding:10px; margin:10px;">
+        <h3>{{ app[0] }}</h3>
+        <p><b> job:</b> {{ app[1] }}</p>
+        <p><b>Location:</b> {{ app[2] }}</p>
+        <p><b>Email:</b> {{ app[3] }}</p>
+        <p><b>Phone:</b> {{ app[4] }}</p>
+    </div>
+        {% endfor %}
+<a href="/uploads/resumes/{{ app[5] }}" target="_blank">View Resume</a>
+    </body>
+    </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+</head>
+<body>
+
+<h2>My Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <input type="text" name="user_id" placeholder="USER ID"
+           value="{{ data[1] if data else '' }}"><br><br>
+
+    <input type="text" name="name" placeholder="Name"
+           value="{{ data[2] if data else '' }}"><br><br>
+
+    <input type="text" name="address" placeholder="Address"
+           value="{{ data[3] if data else '' }}"><br><br>
+
+    <input type="date" name="dob"
+           value="{{ data[4] if data else '' }}"><br><br>
+
+    <input type="email" name="email" placeholder="Email"
+           value="{{ data[5] if data else '' }}"><br><br>
+
+    <input type="text" name="phone" placeholder="Phone"
+           value="{{ data[6] if data else '' }}"><br><br>
+
+    <input type="text" name="degree" placeholder="Degree"
+           value="{{ data[7] if data else '' }}"><br><br>
+
+    <input type="text" name="year" placeholder="Year"
+           value="{{ data[8] if data else '' }}"><br><br>
+
+    <input type="text" name="skills" placeholder="Skills"
+           value="{{ data[9] if data else '' }}"><br><br>
+
+    <label>Photo:</label>
+    <input type="file" name="photo"><br><br>
+
+    <label>Resume:</label>
+    <input type="file" name="resume"><br><br>
+
+    <button type="submit">Save Profile</button>
+
+</form>
+
+<hr>
+
+<h3>Photo</h3>
+
+{% if data and data[10] %}
+    <img src="{{ url_for('static', filename='uploads/photos/' + data[10]) }}" width="120">
+{% else %}
+    <p>No photo uploaded</p>
+{% endif %}
+
+<h3>Resume</h3>
+
+{% if data and data[11] %}
+    <a href="{{ url_for('static', filename='uploads/resumes/' + data[11]) }}" download>
+        Download Resume
+    </a>
+{% else %}
+    <p>No resume uploaded</p>
+{% endif %}
+
+</body>
+</html>
